@@ -1,0 +1,29 @@
+.travel_variation_area{
+    padding-top: 150px;
+    padding-bottom: 114px;
+    @media #{$mobile_device}{
+        padding: 60px 0;
+    }
+    .single_travel{
+        margin-bottom: 30px;
+        .icon{
+
+        }
+        h3{
+            font-size: 22px;
+            font-weight: 400;
+            color: #040E27;
+            margin-bottom: 10px;
+            margin-top: 41px;
+            @media #{$mobile_device} {
+                margin-top: 20px;
+                
+            }
+        }
+        p{
+            font-size: 16px;
+            font-weight: 400;
+            color: #6E6E6E;
+        }
+    }
+}

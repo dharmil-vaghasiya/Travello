@@ -1,0 +1,26 @@
+.counter_wrap{
+    .single_counter{
+        margin-bottom: 30px;
+        @media #{$mobile_device} {
+            text-align: center;
+        }
+        h3{
+            color: #FF4A52;
+            font-weight: 400;
+            font-size: 60px;
+            margin-bottom: 17px;
+            span{
+                span{
+
+                }
+            }
+        }
+        p{
+            color: #7A838B;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 0;
+            line-height: 28px;
+        }
+    }
+}

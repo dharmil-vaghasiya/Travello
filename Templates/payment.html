@@ -1,0 +1,433 @@
+<!--A Design by W3layouts
+   Author: W3layout
+   Author URL: http://w3layouts.com
+   License: Creative Commons Attribution 3.0 Unported
+   License URL: http://creativecommons.org/licenses/by/3.0/
+   -->
+{% load static %}{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="zxx">
+   <head>
+      <title>Payment page</title>
+          <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/pa.png' %} ">
+
+      <!--meta tags -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="keywords" content="Toys Shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+         Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+      <script>
+         addEventListener("load", function () {
+         	setTimeout(hideURLbar, 0);
+         }, false);
+         
+         function hideURLbar() {
+         	window.scrollTo(0, 1);
+         }
+      </script>
+      <!--//meta tags ends here-->
+      <!--booststrap-->
+      <link href="{% static 'newcss/bootstrap.min.css' %}" rel="stylesheet" type="text/css" media="all">
+      <!--//booststrap end-->
+      <!-- font-awesome icons -->
+      <link href="{% static 'newcss/fontawesome-all.min.css' %}" rel="stylesheet" type="text/css" media="all">
+      <!-- //font-awesome icons -->
+      <!--Shoping cart-->
+      <link rel="stylesheet" href="{% static 'newcss/shop.css' %}" type="text/css" />
+      <!--//Shoping cart-->
+      <!--checkout-->
+      <link rel="stylesheet" type="text/css" href="{% static 'newcss/checkout.css' %}">
+      <!--//checkout-->
+      <link href="{% static 'newcss/easy-responsive-tabs.css' %}" rel='stylesheet' type='text/css' />
+      <!--stylesheets-->
+      <link href="{% static 'newcss/style.css' %}" rel='stylesheet' type='text/css' media="all">
+      <!--//stylesheets-->
+      <link href="//fonts.googleapis.com/css?family=Sunflower:500,700" rel="stylesheet">
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+      <style>
+          .pipo1 {
+           width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+        }
+        .pipo2 {
+           width: 50px;
+            padding: 6px 6px;
+            margin: 8px 0;
+        }
+        input[type=submit] {
+            width: 250px;
+            background-color: #000000;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            font-size: 20px;
+            align : center;
+
+        }
+
+        input[type=submit]:hover {
+            background-color: #363030;
+        }
+      </style>
+   </head>
+   <body background="#006699">
+      <!--headder-->
+
+      <!--//headder-->
+      <!-- banner -->
+
+      <!-- short -->
+      <div class="using-border py-3" style="background-color: #29a3a3;">
+         <div class="inner_breadcrumb  ml-4" style="background-color: #29a3a3;">
+            <ul class="short_ls" style="background-color: #29a3a3;">
+               <li>
+
+                  <span style="font-size :20px;">Travello</span>
+               </li>
+
+            </ul>
+         </div>
+      </div>
+      <!-- //short-->
+      <!-- top Products -->
+      <section class="checkout py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+            <div class="ads-grid_shop">
+               <div class="shop_inner_inf">
+                  <div class="privacy about">
+                     <h3>Pay<span>ment</span></h3>
+                     <!--/tabs-->
+                     <div class="responsive_tabs">
+                        <div id="horizontalTab">
+                           <ul class="resp-tabs-list">
+                              <li>Payment Info.</li>
+                              <li>Credit/Debit</li>
+                              <li>Net Banking</li>
+                              <li>Paypal Account</li>
+                           </ul>
+                           <div class="resp-tabs-container">
+                              <!--/tab_one-->
+                              <div class="tab1">
+                                 <div class="tab1">
+                                 <div class="pay_info">
+                                    <div class="vertical_post check_box_agile">
+                                       <table style="height: 256px;" width="488">
+                                          <tbody>
+                                          <tr>
+                                          <td style="width: 156px;">No. of person</td>
+                                          <td style="width: 156px;">Destination</td>
+                                          <td style="width: 156px;">Price</td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 156px;">{{no_of_person}}</td>
+                                          <td style="width: 156px;">{{city}}</td>
+                                          <td style="width: 156px;">
+                                          {{price1}}
+                                          </td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 156px;"></td>
+                                          <td style="width: 156px;" align="center">+18%(GST)   </td>
+                                          <td style="width: 156px;">{{GST}}</td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 156px;"><hr /></td>
+                                          <td style="width: 156px;"><hr /></td>
+                                          <td style="width: 156px;"><hr /></td>
+                                          </tr>
+                                          <tr>
+                                          <td style="width: 156px;"></td>
+                                          <td style="width: 156px;"  align="center">&nbsp;Total:</td>
+                                          <td style="width: 156px;">{{final_total}}</td>
+                                          </tr>
+                                          </tbody>
+                                          </table>
+                                    </div>
+                                 </div>
+                              </div>
+                              </div>
+                              <!--//tab_one     onclick="window.location.href='pessanger_detail_def/card_payment'"  -->
+                              <div class="tab2">
+                                 <div class="pay_info">
+                                    <form action="pessanger_detail_def/card_payment" method="POST" class="creditly-card-form agileinfo_form">
+                                         {% csrf_token %}
+                                       <section class="creditly-wrapper wthree, w3_agileits_wrapper">
+<!--                                          <div class="credit-card-wrapper">-->
+<!--                                             <div class="first-row form-group">-->
+<!--                                                <div class="controls">-->
+<!--                                                   <label class="control-label">Name on Card</label>-->
+<!--                                                   <input class="billing-address-name form-control" type="text" name="name" placeholder="John Smith">-->
+<!--                                                </div>-->
+<!--                                                <div class="w3_agileits_card_number_grids">-->
+<!--                                                   <div class="w3_agileits_card_number_grid_left">-->
+<!--                                                      <div class="controls">-->
+<!--                                                         <label class="control-label">Card Number</label>-->
+<!--                                                         <input class="number credit-card-number form-control" type="text" name="number" inputmode="numeric" autocomplete="cc-number"-->
+<!--                                                            autocompletetype="cc-number" x-autocompletetype="cc-number" placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;">-->
+<!--                                                      </div>-->
+<!--                                                   </div>-->
+<!--                                                   <div class="w3_agileits_card_number_grid_right">-->
+<!--                                                      <div class="controls">-->
+<!--                                                         <label class="control-label">CVV</label>-->
+<!--                                                         <input class="security-code form-control" Â· inputmode="numeric" type="text" name="cvCode" placeholder="&#149;&#149;&#149;">-->
+<!--                                                      </div>-->
+<!--                                                   </div>-->
+<!--                                                   <div class="clear"> </div>-->
+<!--                                                </div>-->
+<!--                                                <div class="controls">-->
+<!--                                                   <label class="control-label">Expiration Date</label>-->
+<!--                                                   <input class="expiration-month-and-year form-control" type="text" name="exp_date" placeholder="MM / YY">-->
+<!--                                                </div>-->
+<!--                                             </div>-->
+<!--                                             <button class="submit" type="submit"><span>Make a payment </span></button>-->
+<!--                                          </div>-->
+                                          <label>Name On Card</label></br>
+                                          <input type="text" class="pipo1" placeholder="John smith" name="name"></br>
+                                       <label>Card Number</label>
+                                       <input type="text" class="pipo1" placeholder="**** **** **** *****" name="card_number"></br>
+                                       <label>CVV</label></br>
+                                       <input type="text" class="pipo1" placeholder="***" name="cvv"><br>
+                                       <label>Expiration Date</label></br>
+                                       <input type="text" class="pipo2" placeholder="MM" name="MM"><label> </label><input type="text" class="pipo2" placeholder="YY" name="YY">
+                                       </br><br>
+                                       <input type="submit" name='Submit' value='MAKE A PAYMENT' >
+
+                                       </section>
+                                    </form>
+
+                                 </div>
+                              </div>
+                              <div class="tab3">
+                                 <div class="pay_info">
+                                    <div class="vertical_post">
+                                       <form action='net_payment' method="post">
+                                           {% csrf_token %}
+                                            <label>Username</label></br>
+                                            <input type="text" class="pipo1"  name="cardNumber"></br>
+                                            <label>Password</label>
+                                            <input type="password" class="pipo1"  name="pass">
+                                            <label>Select Bank</label></br>
+                                            <select id="banks" name="banks">
+                                                    <option value="Bank of Baroda">Bank of Baroda</option>
+                                                    <option value="Bank of India">Bank of India</option>
+                                                    <option value="Canara Bank">Canara Bank</option>
+                                                    <option value="HDFC">HDFC</option>
+													<option value="State Bank of India" >State Bank of India</option>
+                                            </select></br><label>  </label>
+                                            <label></label>
+                                            <input type="submit" name='Submit' value='PAY NOW' >
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="tab4">
+                                 <div class="row pay_info">
+                                    <div class="col-md-6 tab-grid">
+                                       <img class="pp-img" src="{% static 'images/paypal.png' %}" alt="Image Alternative text" title="Image Title">
+                                       <p>Important: You will be redirected to PayPal's website to securely complete your payment.</p>
+
+                                    </div>
+                                    <div class="col-md-6">
+<!--                                       <form class="cc-form">-->
+<!--                                          <div class="clearfix">-->
+<!--                                             <div class="form-group form-group-cc-number">-->
+<!--                                                <label>Card Number</label>-->
+<!--                                                <input class="form-control" placeholder="xxxx xxxx xxxx xxxx" type="text"><span class="cc-card-icon"></span>-->
+<!--                                             </div>-->
+<!--                                             <div class="form-group form-group-cc-cvc">-->
+<!--                                                <label>CVV</label>-->
+<!--                                                <input class="form-control" placeholder="xxxx" type="text">-->
+<!--                                             </div>-->
+<!--                                          </div>-->
+<!--                                          <div class="clearfix">-->
+<!--                                             <div class="form-group form-group-cc-name">-->
+<!--                                                <label>Card Holder Name</label>-->
+<!--                                                <input class="form-control" type="text">-->
+<!--                                             </div>-->
+<!--                                             <div class="form-group form-group-cc-date">-->
+<!--                                                <label>Valid Thru</label>-->
+<!--                                                <input class="form-control" placeholder="mm/yy" type="text">-->
+<!--                                             </div>-->
+<!--                                          </div>-->
+<!--                                          <div class="checkbox checkbox-small">-->
+<!--                                             <label>-->
+<!--                                             <input class="i-check" type="checkbox" checked="">Add to My Cards</label>-->
+<!--                                          </div>-->
+<!--                                          <input class="btn btn-primary submit" type="submit" value="Proceed Payment">-->
+<!--                                       </form>-->
+                                              <form class="cc-form"  action="pessanger_detail_def/card_payment" method="POST" >
+                                                 {%csrf_token%}
+                                                 <label>Card Number</label>
+                                       <input type="text" class="pipo1" placeholder="**** **** **** *****" name="card_number"></br>
+                                                   <label>Card Holder Name</label></br>
+                                          <input type="text" class="pipo1" placeholder="John smith" name="name"></br>
+
+                                       <label>CVV</label></br>
+                                       <input type="text" class="pipo1" placeholder="***" name="cvv"><br>
+                                       <label>Expiration Date</label></br>
+                                       <input type="text" class="pipo2" placeholder="MM" name="MM"><label> </label><input type="text" class="pipo2" placeholder="YY" name="YY">
+                                       </br><br>
+                                       <input type="submit" name='Submit' value='PROCEED PAYMENT' width="300px" >
+                                              </form>
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!--//tabs-->
+                  </div>
+               </div>
+               <!-- //payment -->
+               <div class="clearfix"></div>
+            </div>
+         </div>
+      </section>
+      <!--subscribe-address-->
+      <!--//subscribe-address-->
+      <!--//subscribe-->
+      <!-- footer -->
+
+      <!-- //footer -->
+      <!-- Modal 1-->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div class="modal-body">
+                  <div class="register-form">
+                     <form action="#" method="post">
+                        <div class="fields-grid">
+                           <div class="styled-input">
+                              <input type="text" placeholder="Your Name" name="Your Name" required="">
+                           </div>
+                           <div class="styled-input">
+                              <input type="email" placeholder="Your Email" name="Your Email" required="">
+                           </div>
+                           <div class="styled-input">
+                              <input type="password" placeholder="password" name="password" required="">
+                           </div>
+                           <button type="submit" class="btn subscrib-btnn">Login</button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- //Modal 1-->
+      <!--js working-->
+      <script src="{% static 'newjs/jquery-2.2.3.min.js' %}"></script>
+      <!--//js working-->
+      <!-- cart-js -->
+      <script src="{% static 'newjs/minicart.js' %}"></script>
+      <script>
+         toys.render();
+         
+         toys.cart.on('toys_checkout', function (evt) {
+         	var items, len, i;
+         
+         	if (this.subtotal() > 0) {
+         		items = this.items();
+         
+         		for (i = 0, len = items.length; i < len; i++) {}
+         	}
+         });
+      </script>
+      <!--// cart-js -->
+      <!-- easy-responsive-tabs -->
+      <script src="{% static 'newjs/easy-responsive-tabs.js' %}"></script>
+      <script>
+         $(document).ready(function () {
+         	$('#horizontalTab').easyResponsiveTabs({
+         		type: 'default', //Types: default, vertical, accordion           
+         		width: 'auto', //auto or any width like 600px
+         		fit: true, // 100% fit in a container
+         		closed: 'accordion', // Start closed if in accordion view
+         		activate: function (event) { // Callback function if tab is switched
+         			var $tab = $(this);
+         			var $info = $('#tabInfo');
+         			var $name = $('span', $info);
+         			$name.text($tab.text());
+         			$info.show();
+         		}
+         	});
+         	$('#verticalTab').easyResponsiveTabs({
+         		type: 'vertical',
+         		width: 'auto',
+         		fit: true
+         	});
+         });
+      </script>
+      <!-- credit-card -->
+      <script src="{% static 'newjs/creditly.js' %}"></script>
+      <link rel="stylesheet" href="{% static 'newcss/creditly.css' %}" type="text/css" media="all" />
+      <script>
+         $(function () {
+         	var creditly = Creditly.initialize(
+         		'.creditly-wrapper .expiration-month-and-year',
+         		'.creditly-wrapper .credit-card-number',
+         		'.creditly-wrapper .security-code',
+         		'.creditly-wrapper .card-type');
+         
+         	$(".creditly-card-form .submit").click(function (e) {
+         		e.preventDefault();
+         		var output = creditly.validate();
+         		if (output) {
+         			// Your validated credit card output
+         			console.log(output);
+         		}
+         	});
+         });
+      </script>
+      <!-- //credit-card -->
+      <!-- start-smoth-scrolling -->
+      <script src="{% static 'newjs/move-top.js' %}"></script>
+      <script src="{% static 'newjs/easing.js' %}"></script>
+      <script>
+         jQuery(document).ready(function ($) {
+         	$(".scroll").click(function (event) {
+         		event.preventDefault();
+         		$('html,body').animate({
+         			scrollTop: $(this.hash).offset().top
+         		}, 900);
+         	});
+         });
+      </script>
+      <!-- start-smoth-scrolling -->
+      <!-- here stars scrolling icon -->
+      <script>
+         $(document).ready(function () {
+         
+         	var defaults = {
+         		containerID: 'toTop', // fading element id
+         		containerHoverID: 'toTopHover', // fading element hover id
+         		scrollSpeed: 1200,
+         		easingType: 'linear'
+         	};
+         	$().UItoTop({
+         		easingType: 'easeOutQuart'
+         	});
+         
+         });
+      </script>
+      <!-- //here ends scrolling icon -->
+      <!--bootstrap working-->
+      <script src="{% static 'newjs/bootstrap.min.js' %}"></script>
+      <!-- //bootstrap working-->
+   </body>
+</html>

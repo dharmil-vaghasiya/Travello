@@ -1,0 +1,198 @@
+{% load static %}{% static "images" as baseUrl %}
+<html>
+
+<head>
+    <title>Confirm OTP</title>
+
+
+
+
+
+
+
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main1.css' %}">
+    <style>
+        element {
+            vertical-align: center;
+        }
+        body {
+            font-family: Nimbus Sans L;
+            background-color : #006699;
+        }
+        tr,
+        th,
+        td {
+            padding: 8px;
+            font-size: 20px;
+        }
+        h1 {
+            font-size: 40px;
+        }
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+       input[type=submit] {
+            width: 70%;
+            background-color: #000000;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            font-size: 20px;
+            align : center;
+            border-radius: 4px;
+        }
+        .pipo{
+            width:150px
+
+        }
+        .pipo1{
+            width:60px
+            }
+        .pipo2{
+            width:200px
+            }
+        .shrey{
+            width :100%;
+            color:#ebebe0;
+            padding:10px;
+            border-radius: 0px;
+        }
+        div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+    </style>
+</head>
+
+<body bgcolor=#006699>
+    <div class="shrey">
+        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html">
+                                        <img src="{% static 'img/logo.png' %}" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="main-menu  d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a class="active" href="/">home</a></li>
+                                            <li><a href="about.html">About</a></li>
+                                            {% if user.is_authenticated %}
+                                            <li>Hello, {{user.first_name}}</li>
+                                            <li><a href="logout">logout</a></li>
+                                            {%else%}
+                                            <li><a href="login">Login</a></li>
+                                            <li><a href="register">Register</a></li>
+                                            {%endif%}
+                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog.html">blog</a></li>
+                                                    <li><a href="single-blog.html">single-blog</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="contact.html">Contact</a></li>
+                                             </li>
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+
+                             <div class="col-xl-4 col-lg-4 d-none d-lg-block">
+                                <div class="social_wrap d-flex align-items-center justify-content-end">
+                                    <div class="number">
+                                        <p> <i class="fa fa-phone"></i> 0261-25569</p>
+                                    </div>
+
+                                    <div class="social_links d-none d-xl-block">
+                                        <ul>
+                                            <li>
+                                                <a href="#"> <i class="fa fa-instagram"></i> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> <i class="fa fa-facebook"></i> </a>
+                                            </li>
+                                            <li>
+                                                <a href="#"> <i class="fa fa-google-plus"></i> </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+        </div>
+
+    </div>
+     <div class="limiter" style="background-color:  #006699 ; ">
+            <div class="container-login100"   style="background-color:  #006699 ;">
+                <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54" style="width:900px;">
+                    <form action="otp_verification" method='POST'>
+                        {%csrf_token%}
+                        <table align='center' border="2px">
+                            <tr>
+                                <th >
+                                    Trip id
+                                </th>
+                                <th>Trip Date</th>
+                                <th class="pipo">First Name</th>
+                                <th class="pipo">Last Name</th>
+                                <th class="pipo1">Age</th>
+                                <th class="pipo2">
+                                    Destination
+                                </th>
+                            </tr>
+                            {% for per in person%}
+                            <tr>
+                                <td>{{per.Trip_same_id}}</td>
+                                <td>{{per.Trip_date}}</td>
+                                <td>{{per.first_name}}</td>
+                                <td>{{per.last_name}}</td>
+                                <td>{{per.age}}</td>
+                                <td>{{per.city}}</td>
+                            </tr>
+                           {%endfor%}
+                        </table>
+                    </form>
+                </div>
+            </div>
+     </div>
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+{% load static %}{% static "images" as baseUrl %}
+<html>
+
+<head>
+    <title>Confirm OTP</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{% static 'images/icons/favicon.ico' %}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util1.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main1.css' %}">
+    <style>
+        element {
+            vertical-align: center;
+        }
+
+        body {
+            font-family: Nimbus Sans L;
+            background-color : #006699;
+        }
+
+        tr,
+        th,
+        td {
+            padding: 8px;
+            font-size: 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+
+
+        input[type=submit] {
+            width: 70%;
+            background-color: #000000;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            font-size: 20px;
+            align : center;
+            border-radius: 4px;
+        }
+
+        .button {
+            background-color: #1c87c9;
+            border: none;
+            color: white;
+            padding: 20px 50px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+            align : center;
+        }
+
+        input[type=submit]:hover {
+            background-color: #ffaa00;
+        }
+        div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+    </style>
+</head>
+
+<body bgcolor=#006699>
+
+     <div class="limiter" style="background-color:  #006699 ;">
+            <div class="container-login100"   style="background-color:  #006699 ;">
+                <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                    <form action="otp_verification" method='POST'>
+                        {%csrf_token%}
+                        <table align='center'>
+                            <tr>
+                                <th colspan="2">
+                                    <h1 align='center'> Confirm OTP </h1>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Enter OTP:
+                                </td>
+                                <td>
+                                    <input type="text" name="otp" required  maxlength="6">
+
+                                </td>
+                            </tr>
+                            <tr>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <th colspan="2">
+                                        <input type="submit" name='Submit' value='Submit OTP' required>
+                                    </th>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+
+                                    <td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+     </div>
+</body>
+
+</html>

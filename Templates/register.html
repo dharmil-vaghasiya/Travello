@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Sign Up-Travello</title>
+
+    <!-- Icons font CSS-->
+    <link href="{% static 'colorlib-regform-4/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'colorlib-regform-4/vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'colorlib-regform-4/vendor/select2/select2.min.css'%}" rel="stylesheet" media="all">
+    <link href="{% static 'colorlib-regform-4/vendor/datepicker/daterangepicker.css'%}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'colorlib-regform-4/css/main.css'%}" rel="stylesheet" media="all">
+</head>
+
+<body>
+
+    <form action="register" method="POST">
+        {% csrf_token %}
+        <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+            <div class="wrapper wrapper--w680">
+                <div class="card card-4">
+                    <div class="card-body">
+                        <h2 class="title">Registration Form</h2>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">First Name</label>
+                                    <input class="input--style-4" type="text" name="first_name">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Last Name</label>
+                                    <input class="input--style-4" type="text" name="last_name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Password</label>
+                                    <input class="input--style-4 " type="password" name="password1" />
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label"> Confirm Password </label>
+                                    <input class="input--style-4" type="password" name="password2" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Email</label>
+                                    <input class="input--style-4" type="email" name="email">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Mobile Number</label>
+                                    <input class="input--style-4" type="text" name="username" maxlength="10">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-t-15">
+
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button><br><br><br>
+                            <button class="btn btn--radius-2 btn--green" type="button" onclick="window.location.href='login'">Signin</button>
+
+                        </div>
+                        <div>
+                            {% for message in messages %}
+                            <h4>{{ message }}</h4>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Jquery JS-->
+        <script src="{% static 'colorlib-regform-4/vendor/jquery/jquery.min.js' %}"></script>
+        <!-- Vendor JS-->
+        <script src="{%  static 'colorlib-regform-4/vendor/select2/select2.min.js' %}"></script>
+        <script src="{% static 'colorlib-regform-4/vendor/datepicker/moment.min.js' %}"></script>
+        <script src="{% static 'colorlib-regform-4/vendor/datepicker/daterangepicker.js' %}"></script>
+
+        <!-- Main JS-->
+        <script src="{% static 'colorlib-regform-4/js/global.js' %}"></script>
+    </form>
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->

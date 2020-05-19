@@ -1,0 +1,82 @@
+
+.testimonial_area{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 100px 0 118px 0;
+    background: #f7fafd;
+    @media #{$mobile_device} {
+        padding: 50px 0;
+    }
+    .single_testmonial{
+        margin-bottom: 20px;
+        p{
+            color: #040E27;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 32px;
+            margin: 34px 0 10px 0;
+
+        }
+        .author_thumb{
+            width: 106px;
+            height: 106px;
+            @include border-radius(50%);
+            margin: auto;
+            margin: auto auto 15px auto;
+            position: relative;
+            &::before{
+                position: absolute;
+                right: -15px;
+                bottom: -12px;
+                width: 50px;
+                height: 50px;
+                content: "\f100"; 
+                font-family: "Flaticon";
+                text-align: center;
+                line-height: 50px;
+                background: #1EC6B6;
+                @include border-radius(50%);
+                color: #fff;
+                font-size: 17px;
+            }
+        }
+        .testmonial_author{
+            h3{
+                color: #7A838B;
+                font-size: 16px;
+                font-weight: 400;
+            } 
+        }
+    }
+    .owl-carousel .owl-item img {
+        display: inline-block;
+        width: auto;
+    }
+    .owl-carousel .owl-nav div.owl-next {
+        left: auto;
+        right: 0;
+    }
+    .owl-carousel .owl-nav div {
+        left: 0;
+    }
+    .owl-dots {
+        position: absolute;
+        left: 0;
+        right: 0;
+        text-align: center;
+
+        .owl-dot {
+            width: 12px;
+            height: 12px;
+            background: #AAB1B7;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 0 5px;
+            &.active{
+                background: #FF4A52;
+            }
+        }
+    }
+}

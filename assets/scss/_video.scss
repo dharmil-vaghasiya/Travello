@@ -1,0 +1,125 @@
+.video_bg{
+    background-image: url(../img/banner/video.png);
+}
+.video_area{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 190px 0;
+    @media #{$mobile_device}{
+        padding: 100px 0;
+    }
+    &.overlay:before{
+        opacity: .2;
+    }
+    .video_wrap{
+        h3{
+            font-family: $font3;
+            font-weight: 400;
+            font-size: 80px;
+            line-height: 90px;
+            color: #fff;
+            margin-bottom: 55px;
+            @media #{$mobile_device}{
+                font-size: 50px;
+            }
+        }
+        .video_icon{
+            a{
+                width: 84px;
+                height: 84px;
+                text-align: center;
+                line-height: 84px;
+                @include border-radius(50%);
+                background:#1EC6B6;
+                display: inline-block;
+                color: #fff;
+                font-size: 17px;
+                i{
+                    font-size: 17px;
+                    line-height: 84px;
+                    position: relative;
+                    left: 2px;
+                    top: -1px;
+                }
+            }
+        }
+    }
+}
+.video_play_button{
+    position: relative;
+}
+.video_play_button:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    // transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #1EC6B6;
+    border-radius: 50%;
+    animation: pulse-border 1500ms ease-out infinite;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  @keyframes pulse-border {
+    0% {
+      transform:  scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+
+
+//   recent_trip_area 
+  .recent_trip_area {
+      padding-top: 150px;
+      padding-bottom: 120px;
+      .single_trip{
+          margin-bottom: 30px;
+          .thumb{
+              @include border-radius(5px);
+              overflow: hidden;
+              img{
+                  width: 100%;
+                  @include border-radius(5px);
+              }
+          }
+          .info{
+              padding-top: 16px;
+              .date{
+                  span{
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #7A838B;
+                    display: block;
+                  }
+              }
+              a{
+                  h3{
+                    color: #040E27;
+                    font-size: 22px;
+                    font-weight: 400;
+                    margin-bottom: 0;
+                    margin-top: 10px;
+                    @include transition(.3s);
+
+                  }
+              }
+          }
+          &:hover{
+            .info{
+                a{
+                    h3{
+                        color: #FF4A52;
+                    }
+                }
+            }
+          }
+      }
+  }

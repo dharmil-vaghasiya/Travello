@@ -1,0 +1,195 @@
+.popular_destination_area{
+    padding-top: 140px;
+    padding-bottom: 120px;
+    @media #{$mobile_device}{
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    .single_destination{
+        position: relative;
+        margin-bottom: 30px;
+        border-radius: 5px;
+        overflow: hidden;
+        @include transition(.3s);
+        &:before{
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#040e27+0,040e27+100&0+0,0.7+100 */
+            background: -moz-linear-gradient(top,  rgba(4,14,39,0) 0%, rgba(4,14,39,0.7) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  rgba(4,14,39,0) 0%,rgba(4,14,39,0.7) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  rgba(4,14,39,0) 0%,rgba(4,14,39,0.7) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00040e27', endColorstr='#b3040e27',GradientType=0 ); /* IE6-9 */
+            content: '';
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            position: absolute;
+
+        }
+        .thumb{
+            img{
+                width: 100%;
+                @include border-radius(5px);
+            }
+        }
+        .content{
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+            z-index: 7;
+            p{
+                margin-bottom: 0;
+                font-size: 22px;
+                color: #fff;
+                font-weight: 400;
+                font-family: $font2;
+                @include transition(.3s);
+                a{
+                    display: inline-block;
+                    background:#1EC6B6;
+                    font-size: 12px;
+                    border-radius: 30px;
+                    font-weight: 400;
+                    padding: 0px 12px;
+                    height: 25px;
+                    line-height: 25px;
+                    color: #fff;
+                    margin-left: 10px;
+                    @include transition(.3s);
+                }
+            }
+        }
+        &:hover{
+            @include transform(translateY(-10px));
+            .content{
+                p{
+                    color: #FF4A52;
+                    @include transition(.3s);
+                    a{
+                        background: #FF4A52;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// destination_banner_wrap 
+.destination_banner_wrap{
+    background-image: url(../img/banner/destination.png);
+    padding: 340px 0;
+    background-size: cover;
+    background-position: center center;
+    @media #{$mobile_device} {
+        padding: 150px 0;
+    }
+    @media #{$tablet_device} {
+        padding: 250px 0;
+    }
+    &.overlay:before{
+        opacity: .3;
+    }
+    .destination_text{
+        h3{
+            font-size: 80px;
+            line-height: 90px;
+            color: #fff;
+            font-family: $font3;
+            margin-bottom: 0;
+            @media #{$mobile_device} {
+                font-size: 40px;
+                line-height: 50px;
+            }
+            @media #{$tablet_device} {
+                font-size: 60px;
+                line-height: 70px;
+            }
+        }
+        p{
+            font-size: 20px;
+            font-weight: 400;
+            color: #fff;
+        }
+    }
+}
+
+.destination_details_info{
+    padding-bottom: 150px;
+    padding-top: 70px;
+    @media #{$mobile_device} {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    @media #{$tablet_device} {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .bordered_1px{
+        border-top: 1px solid #E4E6E8;
+        margin-top: 65px;
+        padding-bottom: 65px;
+    }
+    .destination_info{
+        h3{
+            font-size: 24px;
+            font-weight: 500;
+            color: #001D38;
+            margin-bottom: 25px;
+            
+        }
+        p{
+            margin-bottom: 20px;
+        }
+        .single_destination{
+            margin-bottom: 22px;
+            h4{
+                font-size: 16px;
+                font-weight: 500;
+            }
+            p{
+
+            }
+        }
+    }
+    .contact_join{
+        h3{
+            font-size: 24px;
+            font-weight: 500;
+            color: #001D38;
+            margin-bottom: 32px;
+        }
+        .single_input{
+            margin-bottom: 20px;
+            input,textarea{
+                width: 100%;
+                background: #F4F4F4;
+                height: 50px;
+                @include border-radius(5px);
+                color: #000;
+                padding-left: 15px;
+                border: none;
+                &::placeholder{
+                    color: #727272;
+                    font-size: 14px;
+                   
+                    font-weight: 300;
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+            textarea{
+                height: 115px;
+                padding: 15px;
+            }
+        }
+        .submit_btn{
+            button{
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

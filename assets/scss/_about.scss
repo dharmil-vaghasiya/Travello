@@ -1,0 +1,49 @@
+.about_story{
+    padding-top: 145px;
+    padding-bottom: 115px;
+    @media #{$mobile_device} {
+        padding-top: 60px;
+        padding-bottom: 30px;
+    }
+    @media #{$tablet_device} {
+        padding-top: 90px;
+        padding-bottom: 60px;
+    }
+    .story_heading{
+        h3{
+            font-size: 38px;
+            font-weight: 400;
+            color: #040E27;
+            margin-bottom: 60px;
+            @media #{$mobile_device} {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .story_info{
+        margin-bottom: 52px;
+        p{
+            margin-bottom: 18px;
+        }
+    }
+    .story_thumb{
+        margin-bottom: 60px;
+        .thumb{
+            @media #{$mobile_device}{
+                margin-bottom: 30px;
+            }
+            &.padd_1{
+                padding-right: 58px;
+                @media #{$mobile_device} {
+                    padding-right: 0;
+                }
+                @media #{$tablet_device} {
+                    padding-right: 0;
+                }
+            }
+            img{
+                width: 100%;
+            }
+        }
+    }
+}

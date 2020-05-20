@@ -199,7 +199,7 @@ def card_payment(request):
             request.session['OTP'] = rno
 
             amt = request.session['pay_amount']
-            mail_id = mail1
+            mail_id = request.user.get_email()
             msg = 'Your OTP For Payment of ₹' + str(amt) + ' is ' + str(rno)
             # print(msg)
             # print([mail_id])

@@ -19,6 +19,7 @@ from django.forms.formsets import formset_factory
 from django.shortcuts import render
 from django.template import Library
 from datetime import datetime
+from django.contrib.auth.models import User
 
 
 
@@ -199,7 +200,11 @@ def card_payment(request):
             request.session['OTP'] = rno
 
             amt = request.session['pay_amount']
-            mail_id = request.user.get_email()
+            username = request.user.get_username()
+            print(username)
+            user = User.objects.get(username=username)
+            mail_id = user.email
+            print([mail_id])
             msg = 'Your OTP For Payment of ₹' + str(amt) + ' is ' + str(rno)
             # print(msg)
             # print([mail_id])
